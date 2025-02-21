@@ -1,0 +1,12 @@
+table{
+    border-collapse: collapse;
+    text-align: center; 
+    vertical-align: middle;
+    border: solid 1px;
+}
+table th, table td {
+  border: solid 1px;
+}
+.column3{
+    background-color: rgb(137, 188, 27);
+}
