@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин оружия</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            width: 300px;
+            justify-content: center;
+        }
+        input[type="button"] {
+            padding: 15px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+        input[type="button"]:active {
+            background-color: #004080;
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <input onclick="addWeaponInfo()" value="Bвод информации об орyжии" type="button">
+        <input onclick="deleteWeaponInfo()" value="Удаление информации об opyжии" type="button">
+        <input onclick="getWeaponInfo()" value="Получение информации об opyжии" type="button">
+        <input onclick="listAllWeapons()" value="Перечень всего холодного оружия" type="button">
+        <input onclick="ResetWeaponShop()" value="Удалить ассортимент магазина" type="button">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
