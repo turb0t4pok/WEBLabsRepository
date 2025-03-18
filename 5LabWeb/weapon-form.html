@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма заказа холодного оружия</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <form id="weaponOrderForm"></form>
+    <script src="form-builder.js"></script>
+    <script src="form-validator.js"></script>
+    <script>
+        const weaponFormConfig = [
+            { label: 'Ваше имя', elemtype: 'text1line', name: 'customerName', width: 200, required: true },
+            { label: 'Email', elemtype: 'email', name: 'email', width: 250, required: true },
+            { label: 'Телефон', elemtype: 'tel', name: 'phone', width: 150, required: true },
+            { label: 'Тип оружия', elemtype: 'select', name: 'weaponType', options: [
+                {value: '', text: '-- Выберите --'},
+                {value: 'knife', text: 'Нож'},
+                {value: 'sword', text: 'Меч'},
+                {value: 'dagger', text: 'Кинжал'},
+                {value: 'axe', text: 'Топор'}
+            ], required: true },
+            { label: 'Модель', elemtype: 'text1line', name: 'model', width: 200, required: true },
+            { label: 'Материал клинка', elemtype: 'select', name: 'bladeMaterial', options: [
+                {value: '', text: '-- Выберите --'},
+                {value: 'steel', text: 'Сталь'},
+                {value: 'damascus', text: 'Дамаск'},
+                {value: 'titanium', text: 'Титан'}
+            ], required: true },
+            { label: 'Длина клинка (см)', elemtype: 'number', name: 'bladeLength', min: 5, max: 150, required: true },
+            { label: 'Дополнительная обработка', elemtype: 'check', name: 'additionalProcessing' },
+            { label: 'Гравировка', elemtype: 'textarea', name: 'engraving', rows: 3, cols: 40 },
+            { label: 'Я подтверждаю, что имею право владеть холодным оружием', elemtype: 'check', name: 'licenseAgreement', required: true },
+            { label: 'Отправить заказ', elemtype: 'button', value: 'Отправить' }
+        ];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            buildForm('weaponOrderForm', weaponFormConfig);
+        });
+    </script>
+</body>
+</html>
