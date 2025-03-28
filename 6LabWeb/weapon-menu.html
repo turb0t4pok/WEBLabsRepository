@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин холодного оружия</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        h1 {
+            color: #8B0000;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        #menuContainer {
+            margin-bottom: 30px;
+        }
+        
+        #mainMenu {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: #333;
+            border-radius: 5px;
+        }
+        
+        .menu-item {
+            position: relative;
+            padding: 12px 25px;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+            border-right: 1px solid #555;
+            transition: all 0.3s ease;
+        }
+        
+        .menu-item:last-child {
+            border-right: none;
+        }
+        
+        .menu-item:hover {
+            background-color: #8B0000;
+        }
+        
+        .menu-item.has-submenu::after {
+            content: " ▼";
+            font-size: 0.8em;
+            color: #ccc;
+        }
+        
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #444;
+            min-width: 220px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+            z-index: 1;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            border-radius: 0 0 5px 5px;
+        }
+        
+        .submenu .menu-item {
+            border-right: none;
+            border-bottom: 1px solid #555;
+            white-space: nowrap;
+        }
+        
+        .submenu .submenu {
+            left: 100%;
+            top: 0;
+        }
+        
+        .show {
+            display: block;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Магазин холодного оружия "Стальной Клинок"</h1>
+    
+    <div id="menuContainer"></div>
+    
+    <div class="content">
+        <h2>Добро пожаловать в наш магазин!</h2>
+        <p>Выберите интересующую вас категорию в меню выше, чтобы увидеть наш ассортимент.</p>
+    </div>
+    <script src="weaponMenu.js"></script>
+</body>
+</html>
