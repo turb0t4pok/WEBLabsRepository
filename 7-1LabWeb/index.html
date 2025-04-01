@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оружейная лавка - Магазин холодного оружия</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Оружейная лавка</h1>
+        <nav>
+            <button id="homeBtn">Главная</button>
+            <button id="productsBtn">Наши товары</button>
+        </nav>
+    </header>
+
+    <main id="content">
+        <section id="homePage" class="page active">
+            <h2>Добро пожаловать в наш магазин холодного оружия</h2>
+            <p>Это страница Single Page Application (SPA), которая может отображать два вида страниц:</p>
+            <ul>
+                <li>На главной странице приложения размещена общая информация о приложении и кнопка перехода на вторую страницу;</li>
+                <li>На второй странице должна отображаться информация по предметной области согласно варианта (мой вариант - магазин холодного оружия).</li>
+            </ul>
+            <p>Кнопка перехода на следующую страницу находится в навигации и ниже.</p>
+            <button id="showProducts">Посмотреть товары</button>
+        </section>
+
+        <section id="productsPage" class="page">
+            <h2>Наш ассортимент</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <h3>Тактический нож "Рейнджер"</h3>
+                    <p>Прочный нож из стали 440C с рукоятью из G10</p>
+                    <p>Цена: 200 руб.</p>
+                </div>
+                <div class="product-card">
+                    <h3>Японский катана "Самурай"</h3>
+                    <p>Традиционный меч с клинком из высокоуглеродистой стали</p>
+                    <p>Цена: 1100 руб.</p>
+                </div>
+                <div class="product-card">
+                    <h3>Охотничий нож "Тайга"</h3>
+                    <p>Надежный нож для охоты с деревянной рукоятью</p>
+                    <p>Цена: 150 руб.</p>
+                </div>
+                <div class="product-card">
+                    <h3>Боевой топор "Викинг"</h3>
+                    <p>Реконструкция исторического оружия с кожаной обмоткой рукояти</p>
+                    <p>Цена: 300 руб.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Оружейная лавка. Все права защищены.</p>
+        <p>Продажа холодного оружия осуществляется в соответствии с законодательством РБ.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
