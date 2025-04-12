@@ -1,0 +1,186 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+header {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav {
+    margin-top: 1rem;
+}
+
+nav button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition-duration: 500ms;
+}
+
+nav button:hover {
+    background-color: #555;
+    transition-duration: 500ms;
+}
+
+.page {
+    display: none;
+    padding: 2rem;
+}
+
+.page.active {
+    display: block;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+footer {
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+#showProducts {
+    background-color: #8B0000;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition-duration: 500ms;
+}
+
+#showProducts:hover {
+    background-color: #a34343;
+    transition-duration: 500ms;
+}
+
+#dataContainer {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    height: auto !important;
+}
+
+.weapons-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.9em;
+    min-width: 600px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.weapons-table thead tr {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    text-align: left;
+}
+
+.weapons-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.weapons-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.weapons-table th,
+.weapons-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #dddddd;
+}
+
+.weapons-table tbody tr:last-of-type {
+    border-bottom: 2px solid #1a1a1a;
+}
+
+.weapons-table tbody tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+.weapons-table th {
+    background-color: #1a1a1a;
+    color: white;
+    text-align: left;
+}
+
+.weapons-table tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.weapons-table tr:last-of-type {
+    border-bottom: 2px solid #1a1a1a;
+}
+
+.weapons-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.error {
+    color: red;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid red;
+    background-color: #ffeeee;
+}
+
+#loadDataBtn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#loadDataBtn:hover {
+    background-color: #45a049;
+}
+
+.container {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
