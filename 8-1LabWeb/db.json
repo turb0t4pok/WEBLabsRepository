@@ -1,0 +1,16 @@
+{
+    "1": {
+      "name": "Клинок Вислоух",
+      "description": "Прочный нож из стали 440C",
+      "price": "200 руб.",
+      "category": "Ножи",
+      "manufacturer": "Cold Steel"
+    },
+    "2": {
+      "name": "Меч Утигатана",
+      "description": "Традиционный японский меч",
+      "price": "1000 руб.",
+      "category": "Мечи",
+      "manufacturer": "Hanwei"
+    }
+  }
