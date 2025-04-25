@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <%- include('partials/head') %>
+    <title>Каталог оружия</title>
+    <style>
+        .edit-form {
+            display: none;
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .btn-danger {
+            background: #dc3545;
+            margin-left: 10px;
+        }
+        .add-weapon-form {
+            background: #f0f8ff;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="catalog-header">
+            <h1>Каталог оружия</h1>
+        </div>
+        <div class="add-weapon-controls">
+            <button id="toggleAddFormBtn" class="btn btn-toggle-form">Добавить новое оружие</button>
+    
+            <div class="add-weapon-form" id="addWeaponFormContainer">
+                <h2>Добавить новое оружие</h2>
+                <form id="addWeaponForm">
+                    <div class="form-group">
+                        <label>Название:</label>
+                        <input type="text" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Цена:</label>
+                        <input type="text" name="price" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Описание:</label>
+                        <textarea type="description" name="description" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Категория:</label>
+                        <input type="text" name="category" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Производитель:</label>
+                        <input type="text" name="manufacturer" required>
+                    </div>
+                    <button type="submit" class="btn">Добавить</button>
+                    <button type="button" id="cancelAddFormBtn" class="btn btn-cancel">Отмена</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="weapons-list" id="weaponsList">
+            <% weapons.forEach(weapon => { %>
+                <div class="weapon-card" data-id="<%= weapon.id %>">
+                    <h2><%= weapon.name %></h2>
+                    <p class="description"><%= weapon.description %></p>
+                    <p class="price"><%= weapon.price %></p>
+                    <p class="category">Категория: <%= weapon.category %></p>
+                    <p class="manufacturer">Производитель: <%= weapon.manufacturer %></p>
+                    
+                    <div class="weapon-actions">
+                        <a href="/weapon/<%= weapon.id %>" class="btn">Подробнее</a>
+                        <button onclick="toggleEditForm('<%= weapon.id %>')" class="btn">Редактировать</button>
+                        <button onclick="deleteWeapon('<%= weapon.id %>')" class="btn btn-danger">Удалить</button>
+                    </div>
+
+                    <div class="edit-form" id="editForm-<%= weapon.id %>">
+                        <form onsubmit="updateWeapon(event, '<%= weapon.id %>')">
+                            <div class="form-group">
+                                <label>Название:</label>
+                                <input type="text" name="name" value="<%= weapon.name %>" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Цена:</label>
+                                <input type="text" name="price" value="<%= weapon.price %>" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Описание:</label>
+                                <textarea name="description"><%= weapon.description %></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Категория:</label>
+                                <input type="text" name="category" value="<%= weapon.category %>">
+                            </div>
+                            <div class="form-group">
+                                <label>Производитель:</label>
+                                <input type="text" name="manufacturer" value="<%= weapon.manufacturer %>">
+                            </div>
+                            <button type="submit" class="btn">Сохранить</button>
+                            <button type="button" onclick="toggleEditForm('<%= weapon.id %>')" class="btn">Отмена</button>
+                        </form>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </main>
+
+    <script src="/js/catalog-crud.js"></script>
+    <%- include('partials/footer') %>
+</body>
+</html>

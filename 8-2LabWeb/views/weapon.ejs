@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <%- include('partials/head') %>
+    <title><%= weapon.name %></title>
+</head>
+<body>
+    <main class="container">
+        <article class="weapon-details">
+            <h1><%= weapon.name %></h1>
+            <p class="price">Цена: <%= weapon.price %></p>
+            <p class="category">Категория: <%= weapon.category %></p>
+            <p class="manufacturer">Производитель: <%= weapon.manufacturer %></p>
+            <p class="description"><%= weapon.description %></p>
+            <a href="/catalog" class="btn">Вернуться в каталог</a>
+        </article>
+    </main>
+    <%- include('partials/footer') %>
+</body>
+</html>
