@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #ffc1e1 url('img/coin3.png') repeat 0/100px;
+    color: #5e0128;
+    text-align: center;
+}
+.container {
+    display: inline-block;
+    background: #ffb6c1;
+    padding: 20px 40px;
+    border-radius: 12px;
+    margin-top: 40px;
+}
+button {
+    display: block;
+    margin: 8px auto;
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background: #ff69b4;
+    color: #fff;
+    cursor: pointer;
+}
+button:hover { background: #ff1493; }
+.list-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.list-table th,
+.list-table td {
+    border: 1px solid #5e0128;
+    padding: 6px 10px;
+}
+.list-table th { background: #ff98c3; color: #fff; }
